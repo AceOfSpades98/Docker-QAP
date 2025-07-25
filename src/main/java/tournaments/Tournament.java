@@ -2,6 +2,8 @@ package tournaments;
 
 import members.Member;
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -10,8 +12,8 @@ public class Tournament {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long tournamentId;
 
-    private String startDate;
-    private String endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private String location;
     private double entryFee;
     private double cashPrize;
@@ -21,7 +23,7 @@ public class Tournament {
     public Tournament() {
     }
 
-    public Tournament(String startDate, String endDate, String location, double entryFee, double cashPrize, List<Member> participants) {
+    public Tournament(LocalDate startDate, LocalDate endDate, String location, double entryFee, double cashPrize, List<Member> participants) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.location = location;
@@ -34,11 +36,11 @@ public class Tournament {
         return tournamentId;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
@@ -62,11 +64,11 @@ public class Tournament {
         this.tournamentId = tournamentId;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

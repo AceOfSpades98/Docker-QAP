@@ -2,6 +2,8 @@ package members;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 public class Member {
 
@@ -9,16 +11,20 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
 
+    private String firstName;
+    private String lastName;
     private String address;
     private String email;
     private String phoneNum;
-    private String startOfMembership;
+    private LocalDate startOfMembership;
     private double duration;
 
     public Member() {
     }
 
-    public Member(String address, String email, String phoneNum, String startOfMembership, double duration) {
+    public Member(String firstName, String lastName, String address, String email, String phoneNum, LocalDate startOfMembership, double duration) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
         this.email = email;
         this.phoneNum = phoneNum;
@@ -28,6 +34,14 @@ public class Member {
 
     public Long getMemberId() {
         return memberId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getAddress() {
@@ -42,7 +56,7 @@ public class Member {
         return phoneNum;
     }
 
-    public String getStartOfMembership() {
+    public LocalDate getStartOfMembership() {
         return startOfMembership;
     }
 
@@ -52,6 +66,14 @@ public class Member {
 
     public void setMemberId(Long memberId) {
         this.memberId = memberId;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setAddress(String address) {
@@ -66,7 +88,7 @@ public class Member {
         this.phoneNum = phoneNum;
     }
 
-    public void setStartOfMembership(String startOfMembership) {
+    public void setStartOfMembership(LocalDate startOfMembership) {
         this.startOfMembership = startOfMembership;
     }
 
@@ -77,11 +99,11 @@ public class Member {
     @Override
     public String toString() {
         return "ID: " + memberId + "\n" +
+                "Name: " + firstName + " " + lastName + "\n" +
                 "Address: " + address + "\n" +
                 "Email: " + email + "\n" +
                 "Phone #: " + phoneNum + "\n" +
                 "Start of Membership: " + startOfMembership + "\n" +
                 "Duration of Membership: " + duration;
     }
-
 }
