@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import tournaments.Tournament;
 import tournaments.TournamentRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +40,7 @@ public class MemberService {
     }
 
     // Search by start date of tournament
-    public List<Member> getMembersByTournamentStartDate(String startDate) {
+    public List<Member> getMembersByTournamentStartDate(LocalDate startDate) {
         List<Tournament> tournaments = tournamentRepository.findByStartDate(startDate);
         return tournaments
                 .stream()
