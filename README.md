@@ -60,9 +60,10 @@ Screenshots will go here
 
 ## 🛣️ Roadmap
 
-- complete controller classes
-- complete tests
+- Complete controller classes and corresponding tests
 - Screenshots of Postman and Docker
+- RDS support
+- Verify instructions in README are correct upon completion
 
 ### 1. Setup
 - Create Spring Boot Maven project

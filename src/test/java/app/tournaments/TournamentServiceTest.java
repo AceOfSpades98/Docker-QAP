@@ -1,7 +1,6 @@
 package app.tournaments;
 
-import app.members.Member;
-import app.members.MemberService;
+import app.members.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
