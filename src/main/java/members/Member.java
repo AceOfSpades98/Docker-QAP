@@ -16,18 +16,24 @@ public class Member {
     private String address;
     private String email;
     private String phoneNum;
+
+    @Enumerated(EnumType.STRING)
+    private MembershipType type;
+
     private LocalDate startOfMembership;
     private double duration;
 
     public Member() {
     }
 
-    public Member(String firstName, String lastName, String address, String email, String phoneNum, LocalDate startOfMembership, double duration) {
+    public Member(String firstName, String lastName, String address, String email, String phoneNum,
+                  MembershipType type, LocalDate startOfMembership, double duration) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.email = email;
         this.phoneNum = phoneNum;
+        this.type = type;
         this.startOfMembership = startOfMembership;
         this.duration = duration;
     }
@@ -54,6 +60,10 @@ public class Member {
 
     public String getPhoneNum() {
         return phoneNum;
+    }
+
+    public MembershipType getType() {
+        return type;
     }
 
     public LocalDate getStartOfMembership() {
@@ -88,6 +98,10 @@ public class Member {
         this.phoneNum = phoneNum;
     }
 
+    public void setType(MembershipType type) {
+        this.type = type;
+    }
+
     public void setStartOfMembership(LocalDate startOfMembership) {
         this.startOfMembership = startOfMembership;
     }
@@ -103,6 +117,7 @@ public class Member {
                 "Address: " + address + "\n" +
                 "Email: " + email + "\n" +
                 "Phone #: " + phoneNum + "\n" +
+                "Membership: " + type + "\n" +
                 "Start of Membership: " + startOfMembership + "\n" +
                 "Duration of Membership: " + duration;
     }
