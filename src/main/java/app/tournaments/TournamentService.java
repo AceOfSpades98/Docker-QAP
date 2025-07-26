@@ -17,6 +17,11 @@ public class TournamentService {
     @Autowired
     public MemberService memberService;
 
+    // Search by ID
+    public Optional<Tournament> findById(Long tournamentId) {
+        return tournamentRepository.findById(tournamentId);
+    }
+
     // Search by start date
     public List<Tournament> findByStartDate(LocalDate startDate) {
         return tournamentRepository.findByStartDate(startDate);
@@ -88,4 +93,6 @@ public class TournamentService {
     public void deleteTournament(Long tournamentId) {
         tournamentRepository.deleteById(tournamentId);
     }
+
+
 }
