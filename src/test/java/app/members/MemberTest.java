@@ -1,7 +1,5 @@
 package app.members;
 
-import app.members.Member;
-import app.members.MembershipType;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

@@ -1,10 +1,6 @@
 package app.members;
 
-import app.members.Member;
-import app.members.MemberRepository;
-import app.members.MembershipType;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
