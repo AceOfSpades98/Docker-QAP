@@ -1,6 +1,6 @@
-package tournaments;
+package app.tournaments;
 
-import members.Member;
+import app.members.Member;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

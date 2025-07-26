@@ -1,4 +1,4 @@
-package members;
+package app.members;
 
 import org.springframework.web.bind.annotation.*;
 

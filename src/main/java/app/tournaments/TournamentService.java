@@ -1,6 +1,7 @@
-package tournaments;
+package app.tournaments;
 
-import members.*;
+import app.members.Member;
+import app.members.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

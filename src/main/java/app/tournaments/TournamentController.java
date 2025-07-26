@@ -1,4 +1,4 @@
-package tournaments;
+package app.tournaments;
 
 public class TournamentController {
 }

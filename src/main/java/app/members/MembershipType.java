@@ -1,4 +1,4 @@
-package members;
+package app.members;
 
 public enum MembershipType {
     INDIVIDUAL,
