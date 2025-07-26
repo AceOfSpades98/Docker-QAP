@@ -60,10 +60,9 @@ Screenshots will go here
 
 ## 🛣️ Roadmap
 
-- Add enumerator for Member types
-- add methods to Member and MemberService to reflect type
 - complete controller classes
 - complete tests
+- Screenshots of Postman and Docker
 
 ### 1. Setup
 - Create Spring Boot Maven project

@@ -28,6 +28,9 @@ public class MemberService {
     }
 
     // Search by membership type
+    public List<Member> getMembersByType(MembershipType type) {
+        return memberRepository.findByType(type);
+    }
 
     // Search by email
     public Optional<Member> getMemberByEmail(String email) {
@@ -68,10 +71,10 @@ public class MemberService {
 
             existingMember.setFirstName(updatedMember.getFirstName());
             existingMember.setLastName(updatedMember.getLastName());
-            // existingMember.setType
+            existingMember.setType(updatedMember.getType());
             existingMember.setAddress(updatedMember.getAddress());
             existingMember.setEmail(updatedMember.getEmail());
-            existingMember.setPhoneNum(updatedMember.getEmail());
+            existingMember.setPhoneNum(updatedMember.getPhoneNum());
             existingMember.setStartOfMembership((updatedMember.getStartOfMembership()));
             existingMember.setDuration(updatedMember.getDuration());
 
