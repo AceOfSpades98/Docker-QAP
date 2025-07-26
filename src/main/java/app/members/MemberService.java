@@ -1,9 +1,9 @@
-package members;
+package app.members;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tournaments.Tournament;
-import tournaments.TournamentRepository;
+import app.tournaments.Tournament;
+import app.tournaments.TournamentRepository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,7 +24,7 @@ public class MemberService {
 
     // Search by name
     public Optional<Member> getMemberByName(String firstName, String lastName) {
-        return memberRepository.findByName(firstName, lastName);
+        return memberRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 
     // Search by membership type
@@ -39,7 +39,7 @@ public class MemberService {
 
     // Search by phone number
     public Optional<Member> getMemberByPhoneNumber(String phoneNum) {
-        return memberRepository.findByPhoneNumber(phoneNum);
+        return memberRepository.findByPhoneNum(phoneNum);
     }
 
     // Search by start date of tournament
