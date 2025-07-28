@@ -60,7 +60,7 @@ Screenshots will go here
 
 ## 🛣️ Roadmap
 
-- Complete controller classes and corresponding tests
+- Add name implementation to Tournament classes
 - Screenshots of Postman and Docker
 - RDS support
 - Verify instructions in README are correct upon completion

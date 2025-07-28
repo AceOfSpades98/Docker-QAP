@@ -22,6 +22,8 @@ public class TournamentService {
         return tournamentRepository.findById(tournamentId);
     }
 
+    // Search by name
+
     // Search by start date
     public List<Tournament> findByStartDate(LocalDate startDate) {
         return tournamentRepository.findByStartDate(startDate);
@@ -76,6 +78,7 @@ public class TournamentService {
         if (existingTournamentOpt.isPresent()) {
             Tournament existingTournament = existingTournamentOpt.get();
 
+            existingTournament.setName(updatedTournament.getName());
             existingTournament.setStartDate(updatedTournament.getStartDate());
             existingTournament.setEndDate(updatedTournament.getEndDate());
             existingTournament.setLocation(updatedTournament.getLocation());

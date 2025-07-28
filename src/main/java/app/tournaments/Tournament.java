@@ -12,6 +12,7 @@ public class Tournament {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long tournamentId;
 
+    private String name;
     private LocalDate startDate;
     private LocalDate endDate;
     private String location;
@@ -23,7 +24,8 @@ public class Tournament {
     public Tournament() {
     }
 
-    public Tournament(LocalDate startDate, LocalDate endDate, String location, double entryFee, double cashPrize, List<Member> participants) {
+    public Tournament(String name, LocalDate startDate, LocalDate endDate, String location, double entryFee, double cashPrize, List<Member> participants) {
+        this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.location = location;
@@ -34,6 +36,10 @@ public class Tournament {
 
     public Long getTournamentId() {
         return tournamentId;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public LocalDate getStartDate() {
@@ -64,6 +70,10 @@ public class Tournament {
         this.tournamentId = tournamentId;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
@@ -91,6 +101,7 @@ public class Tournament {
     @Override
     public String toString() {
         return "Tournament ID: " + tournamentId + "\n" +
+                "Name: " + name + "\n" +
                 "Start Date: " + startDate + "\n" +
                 "End Date: " + endDate + "\n" +
                 "Location: " + location + "\n" +
