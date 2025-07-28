@@ -38,6 +38,8 @@ public class TournamentController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    // Search by name
+
     // Search by start date
     @GetMapping("/start-date/{startDate}")
     public ResponseEntity<List<Tournament>> getTournamentsByStartDate(@PathVariable String startDate) {
