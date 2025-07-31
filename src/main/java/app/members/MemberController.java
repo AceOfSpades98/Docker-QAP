@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/members")  // Add base path for clarity
+@RequestMapping("/api/members")
 public class MemberController {
 
     private final MemberService memberService;

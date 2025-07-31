@@ -32,6 +32,7 @@
 ![GET Member by Phone Number](screenshots/members/GET-phoneNum-member.jpg)
 
 ### Get Member By Tournament Start Date
+![GET Member by Tournament Start Date](screenshots/members/GET-members-tournament-startDate.jpg)
 
 ### Create a New Member
 ![POST a Member](screenshots/members/POST-member.jpg)
@@ -41,3 +42,46 @@
 
 ### Delete a Member
 ![DELETE a Member](screenshots/members/DELETE-member.jpg)
+
+## Tournament
+
+### Get all tournaments
+![GET All Tournaments](screenshots/tournaments/GET-all-tournaments.jpg)
+
+### Get tournament by ID
+![GET Tournament By ID](screenshots/tournaments/get-id-tournament.jpg)
+
+### Search by name
+![GET Tournament By Name](screenshots/tournaments/get-name-tournament.jpg)
+
+### Search by start date
+![GET Tournament By Start Date](screenshots/tournaments/get-startDate-tournament.jpg)
+
+### Search by location
+![GET Tournament By Location](screenshots/tournaments/GET-location-tournament.jpg)
+
+### Get members in a tournament
+![GET All Members in a Tournament](screenshots/tournaments/members-in-tournament.jpg)
+
+### Add members to a tournament
+![PUT Members to a Tournament](screenshots/tournaments/add-members-tournament.jpg)
+
+### Create a tournament
+![POST a Tournament](screenshots/tournaments/POST-tournament.jpg)
+
+### Update a tournament
+![PUT a Tournament](screenshots/tournaments/update-tournament.jpg)
+
+### Delete a tournament
+![DELETE a Tournament](screenshots/tournaments/delete-tournament.jpg)
+
+## Database (MySQL)
+
+## Members Table
+![Members Table](screenshots/database/members.jpg)
+
+## Tournaments Table
+![Tournaments Table](screenshots/database/tournaments.jpg)
+
+## Tournament Participants Table
+![Tournament Participants Table](screenshots/database/tournament-participants.jpg)

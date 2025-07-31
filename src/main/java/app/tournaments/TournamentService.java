@@ -69,9 +69,9 @@ public class TournamentService {
         return tournamentRepository.findAll();
     }
 
-    // Create a tournament
+    // Create tournament
     public Tournament createTournament(Tournament newTournament) {
-        return tournamentRepository.save(new Tournament());
+        return tournamentRepository.save(newTournament);
     }
 
     // Update a tournament

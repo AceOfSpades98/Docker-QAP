@@ -52,7 +52,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.getAllTournaments())
                 .thenReturn(Collections.singletonList(sampleTournament));
 
-        mockMvc.perform(get("/tournaments"))
+        mockMvc.perform(get("/api/tournament"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].name").value("Spring Open Invitational"));
     }
@@ -62,7 +62,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findById(1L))
                 .thenReturn(Optional.of(sampleTournament));
 
-        mockMvc.perform(get("/tournaments/1"))
+        mockMvc.perform(get("/api/tournament/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.location").value("New York City"));
     }
@@ -72,7 +72,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findById(999L))
                 .thenReturn(Optional.empty());
 
-        mockMvc.perform(get("/tournaments/999"))
+        mockMvc.perform(get("/api/tournament/999"))
                 .andExpect(status().isNotFound());
     }
 
@@ -81,14 +81,14 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findByStartDate(LocalDate.of(2025, 3, 15)))
                 .thenReturn(Collections.singletonList(sampleTournament));
 
-        mockMvc.perform(get("/tournaments/start-date/2025-03-15"))
+        mockMvc.perform(get("/api/tournament/start-date/2025-03-15"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].name").value("Spring Open Invitational"));
     }
 
     @Test
     void getTournamentsByStartDate_ShouldReturnBadRequest_ForInvalidDate() throws Exception {
-        mockMvc.perform(get("/tournaments/start-date/not-a-date"))
+        mockMvc.perform(get("/api/tournament/start-date/not-a-date"))
                 .andExpect(status().isBadRequest());
     }
 
@@ -97,7 +97,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findByLocation("New York City"))
                 .thenReturn(Optional.of(sampleTournament));
 
-        mockMvc.perform(get("/tournaments/location/New York City"))
+        mockMvc.perform(get("/api/tournament/location/New York City"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Spring Open Invitational"));
     }
@@ -107,7 +107,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findByLocation("Atlantis"))
                 .thenReturn(Optional.empty());
 
-        mockMvc.perform(get("/tournaments/location/Atlantis"))
+        mockMvc.perform(get("/api/tournament/location/Atlantis"))
                 .andExpect(status().isNotFound());
     }
 
@@ -120,7 +120,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findAllMembersInTournament(1L))
                 .thenReturn(List.of(exampleMember));
 
-        mockMvc.perform(get("/tournaments/1/members"))
+        mockMvc.perform(get("/api/tournament/1/members"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].firstName").value("Alice"));
     }
@@ -132,7 +132,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.addMembersToTournament(eq(1L), any()))
                 .thenReturn(sampleTournament);
 
-        mockMvc.perform(put("/tournaments/1/members")
+        mockMvc.perform(put("/api/tournament/1/members")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(mockMemberIds)))
                 .andExpect(status().isOk())
@@ -144,7 +144,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.createTournament(any(Tournament.class)))
                 .thenReturn(sampleTournament);
 
-        mockMvc.perform(post("/tournaments")
+        mockMvc.perform(post("/api/tournament")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(sampleTournament)))
                 .andExpect(status().isCreated())
@@ -156,7 +156,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.updateTournament(eq(1L), any()))
                 .thenReturn(sampleTournament);
 
-        mockMvc.perform(put("/tournaments/1")
+        mockMvc.perform(put("/api/tournament/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(sampleTournament)))
                 .andExpect(status().isOk())
@@ -165,7 +165,7 @@ class TournamentControllerTest {
 
     @Test
     void deleteTournament_ShouldReturnOk() throws Exception {
-        mockMvc.perform(delete("/tournaments/1"))
+        mockMvc.perform(delete("/api/tournament/1"))
                 .andExpect(status().isOk());
 
         Mockito.verify(tournamentService).deleteTournament(1L);
@@ -181,7 +181,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findByName("Champions Cup"))
                 .thenReturn(Optional.of(tournament));
 
-        mockMvc.perform(get("/tournaments/name/Champions Cup"))
+        mockMvc.perform(get("/api/tournament/name/Champions Cup"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Champions Cup"))
                 .andExpect(jsonPath("$.location").value("New York"));
@@ -192,7 +192,7 @@ class TournamentControllerTest {
         Mockito.when(tournamentService.findByName("Unknown Cup"))
                 .thenReturn(Optional.empty());
 
-        mockMvc.perform(get("/tournaments/name/Unknown Cup"))
+        mockMvc.perform(get("/api/tournament/name/Unknown Cup"))
                 .andExpect(status().isNotFound());
     }
 }
