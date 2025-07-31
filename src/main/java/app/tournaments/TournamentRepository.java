@@ -13,4 +13,6 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
     List<Tournament> findByStartDate(LocalDate startDate);
 
     Optional<Tournament> findByLocation(String location);
+
+    Optional<Tournament> findByName(String name);
 }

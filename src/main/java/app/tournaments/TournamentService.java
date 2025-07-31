@@ -23,6 +23,9 @@ public class TournamentService {
     }
 
     // Search by name
+    public Optional<Tournament> findByName(String name) {
+        return tournamentRepository.findByName(name);
+    }
 
     // Search by start date
     public List<Tournament> findByStartDate(LocalDate startDate) {
