@@ -84,7 +84,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
-                    <mainClass>com.AceOfSpades.Main</mainClass>
+                    <mainClass>app.Main</mainClass>
                 </configuration>
             </plugin>
 

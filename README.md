@@ -1,3 +1,4 @@
+[📸 Screenshots](screenshots.md)
 
 # 🏌️‍♂️ Golf Club Tournament API
 
