@@ -60,8 +60,7 @@ This project is a Spring Boot REST API designed to manage a Golf Club's membersh
 
 ## 🛣️ Roadmap
 
-- Screenshots of Postman for tournament and DB/RDS
-- RDS support
+- RDS support and screenshots
 - Verify instructions in README are correct upon completion
 
 ## License
