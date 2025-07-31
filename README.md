@@ -1,4 +1,3 @@
-[📸 Screenshots](screenshots.md)
 
 # 🏌️‍♂️ Golf Club Tournament API
 
@@ -57,40 +56,13 @@ This project is a Spring Boot REST API designed to manage a Golf Club's membersh
     
 ## Screenshots
 
-Screenshots will go here
+> ### 📸 [Click here to view Screenshots](screenshots.md)
 
 ## 🛣️ Roadmap
 
-- Add name implementation to Tournament classes
-- Screenshots of Postman and Docker
+- Screenshots of Postman for tournament and DB/RDS
 - RDS support
 - Verify instructions in README are correct upon completion
-
-### 1. Setup
-- Create Spring Boot Maven project
-- Configure local PostgreSQL database
-- Set up JPA/Hibernate ORM
-
-### 2. Model Data
-- Define `Member` and `Tournament` entities with appropriate fields and relationships
-
-### 3. Implement Logic
-- Create repositories and services for data access and business logic
-
-### 4. Build REST API
-- Develop endpoints to add/get Members and Tournaments
-- Add Members to Tournaments
-- Implement search functionality for Members and Tournaments
-
-### 5. Test API
-- Use Postman to test all endpoints and document results
-
-### 6. Dockerize
-- Create Docker setup to run app and database containers
-
-### 7. AWS Deployment
-- Switch database connection to AWS RDS
-- Test and document deployment process
 
 ## License
 
