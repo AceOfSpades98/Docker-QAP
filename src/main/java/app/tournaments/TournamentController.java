@@ -39,6 +39,13 @@ public class TournamentController {
     }
 
     // Search by name
+    @GetMapping("/name/{name}")
+    public ResponseEntity<Tournament> getTournamentsByName(@PathVariable String name) {
+        Optional<Tournament> tournament = tournamentService.findByName(name);
+        return tournament
+                .map(ResponseEntity::ok)
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
 
     // Search by start date
     @GetMapping("/start-date/{startDate}")

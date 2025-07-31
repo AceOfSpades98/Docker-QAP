@@ -7,6 +7,7 @@ import org.mockito.*;
 import java.time.LocalDate;
 import java.util.*;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -34,6 +35,20 @@ class TournamentServiceTest {
 
         List<Tournament> result = tournamentService.findByStartDate(date);
         assertEquals(1, result.size());
+    }
+
+    @Test
+    void testFindByName() {
+        Tournament tournament = new Tournament();
+        tournament.setName("Test Cup");
+
+        when(tournamentRepository.findByName("Test Cup")).thenReturn(Optional.of(tournament));
+
+        Optional<Tournament> result = tournamentService.findByName("Test Cup");
+
+        assertThat(result).isPresent();
+        assertThat(result.get().getName()).isEqualTo("Test Cup");
+        verify(tournamentRepository).findByName("Test Cup");
     }
 
     @Test

@@ -170,4 +170,29 @@ class TournamentControllerTest {
 
         Mockito.verify(tournamentService).deleteTournament(1L);
     }
+
+    @Test
+    void shouldReturnTournamentWhenFoundByName() throws Exception {
+        Tournament tournament = new Tournament();
+        tournament.setTournamentId(1L);
+        tournament.setName("Champions Cup");
+        tournament.setLocation("New York");
+
+        Mockito.when(tournamentService.findByName("Champions Cup"))
+                .thenReturn(Optional.of(tournament));
+
+        mockMvc.perform(get("/tournaments/name/Champions Cup"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("Champions Cup"))
+                .andExpect(jsonPath("$.location").value("New York"));
+    }
+
+    @Test
+    void shouldReturn404WhenTournamentNotFoundByName() throws Exception {
+        Mockito.when(tournamentService.findByName("Unknown Cup"))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/tournaments/name/Unknown Cup"))
+                .andExpect(status().isNotFound());
+    }
 }
