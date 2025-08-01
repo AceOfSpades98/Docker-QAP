@@ -11,6 +11,12 @@
 ### Project Running
 ![Docker Running](screenshots/deployment/project-build.jpg)
 
+### Pushed to Docker Hub
+![Docker Hub Push](screenshots/deployment/dockerhub-push.jpg)
+
+### RDS Deployment Attempt (As far as I could get)
+![RDS Deployment Attempt](screenshots/deployment/docker-deploy-aws.jpg)
+
 ## Member Request Mappings
 
 ### Get All Members

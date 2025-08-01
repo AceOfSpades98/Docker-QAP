@@ -1,11 +1,15 @@
 version: '3'
 services:
   golf-club-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: golf-club-api:latest
     ports:
       - "8080:8080"
     environment:
-      - DB_HOST=host.docker.internal
+      # - DB_HOST=host.docker.internal
+      - DB_HOST=deployingtest-instance-1.ckh1nmnnzzv1.us-east-1.rds.amazonaws.com
       - DB_USER=root
       - DB_PASSWORD=Skittles98
       - DB_NAME=golf_club_api
